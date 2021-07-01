@@ -33,16 +33,9 @@ public class ItemDao {
   private static DynamoDBMapper mapper;
 
   static {
-    BasicSessionCredentials sessionCredentials = new BasicSessionCredentials(
-            "ASIA22HOWFS5RL6FUD46",
-            "jubkNW1/U77vzGd60yebyr7oCxGNnlWM+0ffcBKz", "FwoGZXIvYXdzEO3//////////wEaDLlnRPbMjsVdMsZf6SLLAXYCMR6lNP13/mjsxHfjZB48Wcolaom96lmx1qR2h7mRFeBkwWQ2xrv+OOHNA0VmF4hZPOPfXp7QYbTdcU9aSvrS8Tkxk88I11+9FKwfdAac1zghdewRFkWUxkEIr710TjAVofhyw6wJobBwVF6xQUy0Bw4uiUtNTStzDbkAG9DXW0+X/4uIma2aa/URTef8Rux6weqYLUKqa6GXrluNkkLBdGaKwmGl+2vkgpvnOq5weY3WDjFj4Ep+Lqh9R16NswXI0WzikQpyn7NLKKX69IYGMi1lB3PP46bo5r4jznBmQ/EOgWV0YYpVfQwcSWAgj74O0nJpaNsTdfEbETjrjQU=");
-    // ClientConfiguration clientConfiguration = new ClientConfiguration();
-//    clientConfiguration.setMaxConnections(6000);
-//    clientConfiguration.setMaxErrorRetry(3);
-
     client = AmazonDynamoDBClientBuilder.standard()
             //.withClientConfiguration(clientConfiguration)
-            .withCredentials(new AWSStaticCredentialsProvider(sessionCredentials))
+            //withCredentials(new AWSStaticCredentialsProvider(sessionCredentials))
             .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-1.amazonaws.com", "us-east-1"))
             .build();
     //System.out.println("Connection Created");
